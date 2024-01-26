@@ -19,6 +19,8 @@ concurrency:
 jobs:
   deploy:
     environment:
+      VITE_GITHUB_API_USER: ${VITE_GITHUB_API_USER}
+      VITE_GITHUB_API_URL: ${VITE_GITHUB_API_URL}
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
