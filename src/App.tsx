@@ -1,16 +1,18 @@
+import { About } from "./components/About";
+import { Background } from "./components/Background";
+import { Projects } from "./components/Projects";
+import { Versioning } from "./components/Versioning";
 import { env } from "./env";
-import { name, version } from "../package.json";
 
 export function App() {
-  document.title = `${env.VITE_GITHUB_API_USER}'s ${name}`;
+  document.title = `${env.VITE_GITHUB_API_USER}'s ${env.VITE_GITHUB_API_USER}`;
 
   return (
-    <>
-      <h1 className="text-3xl font-bold underline font-inter">
-        {name}: Hello, World
-      </h1>
-      env: {env.VITE_GITHUB_API_TOKEN}
-      version: {version}
-    </>
+    <main className="max-w-[80%] mx-auto snap-y snap-mandatory">
+      <Background />
+      <About />
+      <Projects />
+      <Versioning />
+    </main>
   );
 }
