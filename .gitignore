@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+temp
 *.local
 
 # Editor directories and files
@@ -25,5 +26,7 @@ dist-ssr
 
 # environment
 .env
+.env.local
 
 pnpm-lock.yaml
+bun.lockb

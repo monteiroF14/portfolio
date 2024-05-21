@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+# Portfolio README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a personal portfolio project built using React, Tailwind CSS, and TypeScript. It showcases my web development skills and projects, providing a detailed overview of my work experience, skills, and contact information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Responsive Design**: Optimized for all screen sizes, from mobile devices to desktop.
+- **Modern UI**: Clean and professional interface using Tailwind CSS.
+- **TypeScript**: Ensures type safety and better code maintainability.
+- **Project Showcase**: Displays various projects with descriptions, technologies used, and links to live demos and repositories.
+- **Contact Form**: Allows visitors to send messages directly through the website.
+- **Smooth Animations**: Enhances user experience with subtle animations and transitions.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### **Clone the repository:**
+
+```bash
+git clone https://github.com/monteiroF14/portfolio.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
