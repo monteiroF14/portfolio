@@ -32,24 +32,26 @@ jobs:
         with:
           node-version: "lts/Hydrogen"
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Install bun
+        run: curl -fsSL https://bun.sh/install | bash
 
       - name: Install Dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Build Project
-        run: pnpm build
+        run: bun build
         env:
           VITE_GITHUB_API_USER: ${{ secrets.VITE_GITHUB_API_USER }}
           VITE_GITHUB_API_URL: ${{ secrets.VITE_GITHUB_API_URL }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
-          path: "./dist"
+          path: "./build"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
