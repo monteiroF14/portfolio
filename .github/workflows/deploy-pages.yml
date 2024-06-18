@@ -40,7 +40,7 @@ jobs:
           VITE_GITHUB_API_URL: ${{ secrets.VITE_GITHUB_API_URL }}
 
       - name: Archive production artifacts
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: "github-pages"
           path: ./build
