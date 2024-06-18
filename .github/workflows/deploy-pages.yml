@@ -42,8 +42,7 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: "github-pages"
-          path: build
+          path: ./build
 
       - name: Deploy
         uses: actions/deploy-pages@v4
