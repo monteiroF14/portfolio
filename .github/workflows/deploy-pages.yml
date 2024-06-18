@@ -33,6 +33,7 @@ jobs:
 
       - name: Install Dependencies
         uses: oven-sh/setup-bun@v1
+        run: bun install
         with:
           bun-version: latest
 
