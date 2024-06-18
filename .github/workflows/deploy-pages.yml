@@ -31,11 +31,13 @@ jobs:
         with:
           node-version: "lts/Hydrogen"
 
-      - name: Install Dependencies
+      - name: Setup Bun
         uses: oven-sh/setup-bun@v1
-        run: bun install
         with:
           bun-version: latest
+
+      - name: Install Dependencies
+        run: bun install
 
       - name: Build Project
         run: bun run build
