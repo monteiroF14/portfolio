@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+
   workflow_dispatch:
 
 permissions:
@@ -20,31 +21,33 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: "lts/Hydrogen"
 
-      - name: Install and Build
-        run: |
-          bun install
-          bun run build
-        env:
-          VITE_GITHUB_API_USER: ${{ secrets.VITE_GITHUB_API_USER }}
-          VITE_GITHUB_API_URL: ${{ secrets.VITE_GITHUB_API_URL }}
+      - name: Install pnpm
+        run: npm install -g pnpm
 
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Project
+        run: pnpm build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: "github-pages"
-          path: ./build
+          path: "./build"
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
